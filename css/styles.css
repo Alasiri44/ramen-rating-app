@@ -38,7 +38,7 @@ div#myForm form label{
     width: 245px;
 }
 
-#myForm button#myButton{
+#myForm #myButton{
     height: 30px;
     width: 245px;
     margin: 10px;
