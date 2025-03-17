@@ -6,22 +6,10 @@ document.addEventListener('DOMContentLoaded', function(e){
         { id: 3, name: "Tonkotsu Ramen", restaurant: "Ramen-ya", image: "tonkotsu.jpg" }
      ];
 
-     const myRamen = document.querySelectorAll('div#images img');
      
-     myRamen.forEach(ramenImage => {
-     ramenImage.addEventListener('click', function(){
-        
-        const myDiv = document.getElementById('enlargedImage');
-        
-        myDiv.src = ramenImage.src;
-
-        myDiv.style.height = '250px';
-        myDiv.style.width = '300px';
-     });
-     });
-
      // Creating a new image element
      const button = document.querySelector('#myButton');
+     const images = document.getElementById('images');
      button.addEventListener('click', function(e){
         e.preventDefault();
 
@@ -32,12 +20,33 @@ document.addEventListener('DOMContentLoaded', function(e){
         const ramenComment = document.getElementById('ramenComment').value; 
 
         if(ramenName.trim() !== '' && ramenRestaurant.trim() !== ''  && ramenImage.trim() !== ''  && ramenRating.trim() !== ''  && ramenComment.trim() !== '' ){
-        
+            const newImage = document.createElement('img');
+            newImage.src = ramenImage;
+            newImage.alt = ramenName;
+            newImage.classList.add("ramen-image");
+
+            images.appendChild(newImage);
         }else{
          alert('Please fill all the requirements');
-        }
-
-
-       
+        }        
      });
+
+
+     // Selecting the images
+     const myRamen = document.querySelectorAll('div#images img');
+     
+     
+     images.addEventListener('click', function(event){
+        
+      if (event.target.classList.contains("ramen-image")) {
+        const myDiv = document.getElementById('enlargedImage');
+        
+        myDiv.src = event.target.src;
+
+        myDiv.style.height = '250px';
+        myDiv.style.width = '300px';
+      }
+     });
+     
+
 });
