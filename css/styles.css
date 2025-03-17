@@ -1,0 +1,55 @@
+.heading{
+    background-color: black;
+    color: white;
+}
+
+body{    
+    text-align: center;
+}
+
+
+#myForm{   
+    width: 255px;
+    margin: 0 auto;    
+    position: relative;
+    text-align: center;
+}
+
+#myForm input{    
+    height: 20px;
+    width: 245px;
+}
+
+#myForm input:focus{
+    outline: none;
+    border-color: 2px solid #007bff;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.5);
+    background-color: #f0f8ff; 
+}
+
+div#myForm form label{
+    position: absolute;
+    left: 0px;
+
+}
+
+#myForm textarea{
+    height: 50px;
+    width: 245px;
+}
+
+#myForm button#myButton{
+    height: 30px;
+    width: 245px;
+    margin: 10px;
+}
+
+div#images img{
+    width: 100px;
+    height: 100px;
+}
+
+#enlargedImage{
+    width: 300px;
+    height: 250px;
+}
