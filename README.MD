@@ -42,4 +42,4 @@ A simple web application that displays a list of ramen dishes. Users can:
 
 ---
 
-## 📂 Project Structure  
+
