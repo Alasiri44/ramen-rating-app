@@ -57,3 +57,29 @@ div#ramen-menu img{
 div#ramen-menu{
     position: relative;
 }
+
+.newHeader{
+    margin: 0px;
+    padding: 0px;
+}
+
+div#ramen-details{
+    position: relative;
+    width: 300px;
+    margin: 0 auto;
+    
+}
+
+.onTopParagraph{
+    position: absolute;
+    color: white;
+    background-color: black;
+    bottom: 90px;
+}
+
+.onTopP{
+    position: absolute;
+    color: white;
+    background-color: black;
+    bottom: 70px;
+}

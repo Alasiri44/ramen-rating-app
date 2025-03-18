@@ -13,6 +13,8 @@ document.addEventListener('DOMContentLoaded', function(e){
      const images = document.getElementById('ramen-menu');
      const newRating = document.getElementById('ratingParagraph');
      const newComment = document.getElementById('commentParagraph');
+     const nameTop = document.getElementById('name-p');
+     const restaurantTop = document.getElementById('restaurant-p');
 
  //Function to display the ramens
    function displayRamens(){
@@ -59,8 +61,14 @@ document.addEventListener('DOMContentLoaded', function(e){
          const myRamen = ramens.find((element) => element.image === myDiv.src )
          
          newRating.innerText = `${myRamen.rating} / 5`;
+         newRating.style.margin = '0px';
+         newRating.style.padding = '0px';
          newComment.innerText = myRamen.comment;
+         newComment.style.margin = '0px';
+         newComment.style.padding = '0px';
          
+         nameTop.innerText =myRamen.name;
+         restaurantTop.innerText = myRamen.restaurant;
          }
       }
    }
