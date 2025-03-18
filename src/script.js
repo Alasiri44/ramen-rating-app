@@ -11,6 +11,8 @@ document.addEventListener('DOMContentLoaded', function(e){
 
      const button = document.querySelector('#myButton');
      const images = document.getElementById('ramen-menu');
+     const newRating = document.getElementById('ratingParagraph');
+     const newComment = document.getElementById('commentParagraph');
 
  //Function to display the ramens
    function displayRamens(){
@@ -26,7 +28,8 @@ document.addEventListener('DOMContentLoaded', function(e){
          removeButton.innerText = 'X';         
 
          imgDiv.appendChild(removeButton);
-         imgDiv.appendChild(img);       
+         imgDiv.appendChild(img);
+         
 
          removeButton.style.position = 'absolute';
       }
@@ -35,6 +38,7 @@ document.addEventListener('DOMContentLoaded', function(e){
       removeButton.forEach(buttonElement=> {
          buttonElement.addEventListener('click', function(event){
             event.target.nextSibling.remove();
+            event.target.remove();
             
          });
       });
@@ -52,6 +56,11 @@ document.addEventListener('DOMContentLoaded', function(e){
 
          myDiv.style.height = '250px';
          myDiv.style.width = '300px';
+         const myRamen = ramens.find((element) => element.image === myDiv.src )
+         
+         newRating.innerText = `${myRamen.rating} / 5`;
+         newComment.innerText = myRamen.comment;
+         
          }
       }
    }
