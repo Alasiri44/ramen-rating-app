@@ -1,15 +1,16 @@
 
 document.addEventListener('DOMContentLoaded', function(e){
     const ramens = [
-        { id: 1, name: "Shoyu Ramen", restaurant: "Ichiran", image: "https://moringa.instructure.com/courses/967/files/517801/preview", rating: 5, comment: "Delicious!" },
-        { id: 2, name: "Miso Ramen", restaurant: "Menya", image: "https://moringa.instructure.com/courses/967/files/517800/preview", rating: 4, comment: "Very flavorful!" },
-        { id: 3, name: "Tonkotsu Ramen", restaurant: "Ramen-ya", image: "https://moringa.instructure.com/courses/967/files/517799/preview", rating: 4, comment: 'The best' },
-        {id: 4, name: 'Narotu Ramen', restaurant: 'Mahashi', image: 'https://moringa.instructure.com/courses/967/files/517798/preview', rating: 5, comment: 'Fabulous' },
-        {id: 5, name: 'Mahak Ramen', restaurant: 'Mahaja', image: 'https://moringa.instructure.com/courses/967/files/517797/preview', rating: 1, comment: 'Bad choice' }
+        { id: 1, name: "Shoyu Ramen", restaurant: "Ichiran", image: "./assets/shoyu.jpg", rating: 5, comment: "Delicious!" },
+        { id: 2, name: "Miso Ramen", restaurant: "Menya", image: "./assets/kojiro.jpg", rating: 4, comment: "Very flavorful!" },
+        { id: 3, name: "Tonkotsu Ramen", restaurant: "Ramen-ya", image: "./assets/nirvana.jpg", rating: 4, comment: 'The best' },
+        {id: 4, name: 'Narotu Ramen', restaurant: 'Mahashi', image: './assets/naruto.jpg', rating: 5, comment: 'Fabulous' },
+        {id: 5, name: 'Mahak Ramen', restaurant: 'Mahaja', image: './assets/gyukotsu.jpg', rating: 1, comment: 'Bad choice' }
        
      ];
 
      const button = document.querySelector('#myButton');
+     const form = document.querySelector('#myForm');
      const images = document.getElementById('ramen-menu');
      const newRating = document.getElementById('ratingParagraph');
      const newComment = document.getElementById('commentParagraph');
@@ -22,7 +23,7 @@ document.addEventListener('DOMContentLoaded', function(e){
       for(let element of ramens){
          let img = document.createElement('img');
          img.src = element.image;
-         // img.alt = element.name;
+         img.alt = element.name;
          img.classList.add('ramen-image');
 
          let removeButton = document.createElement('button');
@@ -55,12 +56,13 @@ document.addEventListener('DOMContentLoaded', function(e){
          const myDiv = document.getElementById('enlargedImage');
          
          myDiv.src = event.target.src;
+         myDiv.alt = event.target.alt;
 
          myDiv.style.height = '250px';
          myDiv.style.width = '300px';
-         const myRamen = ramens.find((element) => element.image === myDiv.src )
+         const myRamen = ramens.find((element) => element.name === myDiv.alt )
          
-         newRating.innerText = `${myRamen.rating} / 5`;
+         newRating.innerText = myRamen.rating;
          newRating.style.margin = '0px';
          newRating.style.padding = '0px';
          newComment.innerText = myRamen.comment;
@@ -78,7 +80,7 @@ document.addEventListener('DOMContentLoaded', function(e){
      function addSubmitListener(){
 
 
-      button.addEventListener('click', function(e){
+      form.addEventListener('submit', function(e){
          e.preventDefault();
 
          const ramenName = document.getElementById('ramenName').value;
