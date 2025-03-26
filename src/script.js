@@ -97,11 +97,24 @@ document.addEventListener('DOMContentLoaded', function(e){
                newImage.classList.add("ramen-image");
 
                ramens.push({id: (ramens[ramens.length - 1].id)++, name: ramenName, restaurant: ramenRestaurant, image: ramenImage, rating: ramenRating, comment: ramenComment});
-              
-               images.appendChild(newImage);
+               let removeButton = document.createElement('button');
+               removeButton.classList.add('remove-button');
+               removeButton.innerText = 'X';         
+      
+               images.appendChild(removeButton);
+              images.appendChild(newImage);              
+
+              removeButton.style.position = 'absolute';
          }else{
             alert('Please fill all the requirements');
-         }                          
+         }    
+         let removeButton = document.querySelectorAll('.remove-button');
+         removeButton.forEach(buttonElement=> {
+            buttonElement.addEventListener('click', function(event){
+               event.target.nextSibling.remove();
+               event.target.remove();
+            });
+            });                      
       });
    }  
 
