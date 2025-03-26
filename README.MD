@@ -3,8 +3,7 @@
 A simple web application that displays a list of ramen dishes. Users can:  
 ✅ View ramen images.  
 ✅ Click an image to see ramen details (name, restaurant, rating, and comment).  
-✅ Add new ramen entries via a form.  
-✅ (Optional) Edit rating and comments.  
+✅ Add new ramen entries via a form.   
 ✅ (Optional) Remove a ramen entry from the menu.  
 
 ---
@@ -28,9 +27,8 @@ A simple web application that displays a list of ramen dishes. Users can:
   - Implement `main()` to initialize the app.  
   - Ensure the DOM is fully loaded before execution.  
 
-### ⭐ Advanced Features (Optional)  
-- Display the first ramen’s details automatically on page load.  
-- Allow users to edit the rating and comment dynamically.  
+### ⭐ Advanced Features  
+- Display the first ramen’s details automatically on page load.   
 - Enable deletion of a ramen entry from the menu.  
 
 ---
