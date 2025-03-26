@@ -2,8 +2,8 @@
 document.addEventListener('DOMContentLoaded', function(e){
     const ramens = [
          {id: 1, name: 'Narotu Ramen', restaurant: 'Mahaja', image: './assets/gyukotsu.jpg', rating: 1, comment: 'Bad choice' },
-        { id: 2, name: "Shoyu Ramen", restaurant: "Ichiran", image: "./assets/shoyu.jpg", rating: 5, comment: "Delicious!" },
-        { id: 3, name: "Miso Ramen", restaurant: "Menya", image: "./assets/kojiro.jpg", rating: 4, comment: "Very flavorful!" },
+        { id: 2, name: "Shoyu Ramen", restaurant: "Ichiran", image: "./assets/shoyu.jpg", rating: 8, comment: "Delicious!" },
+        { id: 3, name: "Miso Ramen", restaurant: "Menya", image: "./assets/kojiro.jpg", rating: 6, comment: "Very flavorful!" },
         { id: 4, name: "Tonkotsu Ramen", restaurant: "Ramen-ya", image: "./assets/nirvana.jpg", rating: 4, comment: 'The best' },
         {id: 5, name: 'Mahak Ramen', restaurant: 'Mahashi', image: './assets/naruto.jpg', rating: 5, comment: 'Fabulous' },
         
